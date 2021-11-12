@@ -30,11 +30,11 @@ class MainFragment : Fragment() {
 
         binding.nbItems.text = activity?.resources?.getString(R.string.nbItems, viewModel.items.size.toString())
 
-        val CallbackClickItem = { pos: Int ->
+        val callbackClickItem = { pos: Int ->
             viewModel.remove(pos)
             binding.nbItems.text = activity?.resources?.getString(R.string.nbItems, viewModel.items.size.toString())
         }
-        val itemAdapter=ItemAdapter(viewModel.items, CallbackClickItem)
+        val itemAdapter=ItemAdapter(viewModel.items, callbackClickItem)
         binding.recyclerView.adapter = itemAdapter
 
 

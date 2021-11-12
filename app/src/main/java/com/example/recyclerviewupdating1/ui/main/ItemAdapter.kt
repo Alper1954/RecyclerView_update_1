@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewupdating1.R
 
 
-class ItemAdapter(private val dataset: List<String>, val CallbackClickItem: (Int) -> Unit) :
+class ItemAdapter(private val dataset: List<String>, val callbackClickItem: (Int) -> Unit) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -29,7 +29,7 @@ class ItemAdapter(private val dataset: List<String>, val CallbackClickItem: (Int
         holder.textView.text = item
         holder.btn_remove.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                CallbackClickItem(position)
+                callbackClickItem(position)
                 notifyDataSetChanged()
             }
         })
