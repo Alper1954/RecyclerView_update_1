@@ -29,7 +29,7 @@ class ItemAdapter(private val dataset: List<String>, val callbackClickItem: (Int
         holder.textView.text = item
         holder.btn_remove.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                callbackClickItem(position)
+                callbackClickItem(holder.adapterPosition)
                 notifyDataSetChanged()
             }
         })
